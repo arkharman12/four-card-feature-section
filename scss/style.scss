@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+// Colors
+
+// Primary
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+// Neutral
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: $very-light-gray;
+}
+
+.container {
+    max-width: 1100px;
+    height: 100%;
+    margin: 50px auto 0 auto;
+}
+
+// Top heading styles
+h1 {
+    text-align: center;
+}
+
+h1.heading-one {
+    color: $grayish-blue;
+    font-weight: 200;
+}
+
+h1.heading-two {
+    color: $very-dark-blue;
+}
+
+h4 {
+    color: $grayish-blue;
+    text-align: center;
+    font-weight: 400;
+}
+
+h4.mobile-only {
+    display: none;
+}
+
+// Card styles
+.flex__container {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 25px;
+        margin: 15px;
+        width: 315px;
+        height: 215px;
+        border-radius: 8px;
+        box-shadow: hsla(212, 86%, 64%, 0.2) 0px 8px 24px;
+
+        p.title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            color: $grayish-blue;
+            font-size: 12px;
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            align-self: flex-end;
+        }
+    }
+
+    .card.cyan {
+        border-top: 3px solid $cyan;
+    }
+
+    .card.red {
+        border-top: 3px solid $red;
+        margin-bottom: 25px;
+    }
+
+    .card.orange {
+        border-top: 3px solid $orange;
+    }
+
+    .card.blue {
+        border-top: 3px solid $blue;
+    }
+
+}
+
+// Media queries
+@media (max-width: 1024px) {
+
+    // Card styles
+    .flex__container {
+        flex-direction: column;
+
+        .card.red {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    // Top heading styles
+    h1 {
+        font-size: 25px;
+    }
+
+    h1.desktop-only, h4.desktop-only {
+        display: none;
+    }
+    
+    h4.mobile-only {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        margin: 10px 20px 0 20px;
+    }
+}
